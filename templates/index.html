@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Career Counselor</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <h1>Career Counselor</h1>
+    <form method="POST">
+      {% for section, section_questions in questions.items() %}
+      <h2>{{ section }}</h2>
+      {% for question in section_questions %}
+      <label>{{ question }}</label><br />
+      <textarea name="{{ section }}_{{ question }}"></textarea><br /><br />
+      {% endfor %} {% endfor %}
+      <button type="submit">Get Career Recommendations</button>
+    </form>
+  </body>
+</html>
